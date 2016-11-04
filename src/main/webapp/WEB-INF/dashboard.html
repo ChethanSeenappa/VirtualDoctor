@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<title>Dashboard | VIRTUAL DOCTOR</title>
+		<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+		<link href="css/style.css" rel="stylesheet" type="text/css">
+		<link href="css/bootstrap-select.min.css" rel="stylesheet" type="text/css">
+		<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap-select.min.js"></script>
+		<script>					
+			$(document).ready(function(){
+				console.log("inside ready function");
+				$('#disease').change(function() {
+					console.log("inside on change function");
+					if (this.value=="fever") {
+					$("#symptoms1").show();
+				}
+					else{
+						$("#symptoms1").hide();
+					}
+					/*if ( this.value == 'fever'){
+						$("#symptoms1").show();
+					}else{
+						$("#symptoms1").hide();
+					}*/
+				});
+			});
+		</script>
+
+		</script>
+		<style type="text/css">
+		#symptoms1{
+			display: none;
+		}
+		</style>
+	</head>
+	<body class="dashboard">
+		<!-- Navbar -->
+		<div class="navbar navbar-primary navbar-static-top">
+			<div class="container">
+				<div class="navbar-header">
+					<a href="#" class="navbar-brand">Virtual Doctor</a>
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainNav" aria-expanded="false">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="collapse navbar-collapse" id="mainNav">
+					<ul class="nav navbar-nav navbar-right">
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pradeep <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">PROFILE</a></li>
+								<li><a href="#">SETTINGS</a></li>
+								<li role="separator" class="divider"></li>
+								<li><a href="#">LOGOUT</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div><!-- / Navbar -->
+
+		<div class="container">
+			<div class="row">
+			<!-- Sidebar -->
+				<aside class="col-lg-3" id="sidebar">
+					<div class="panel panel-primary">
+						<div class="panel-body">
+							<ul class="nav nav-pills nav-stacked">
+								<li class="active"><a href="#">DASHBOARD</a></li>
+							    <li role="presentation"><a href="#medication" aria-controls="medication" role="tab" data-toggle="tab">MEDICATION</a></li>
+							    <li role="presentation"><a href="#exercise" aria-controls="excersise" role="tab" data-toggle="tab">EXERCISE</a></li>
+							    <li role="presentation"><a href="#diet" aria-controls="diet" role="tab" data-toggle="tab">DIET</a></li>
+							</ul>
+						</div>
+					</div>
+				</aside><!-- /Sidebar -->
+
+				<!-- Content Body -->
+				<div class="col-lg-9" id="content-body">
+					<div class="panel panel-primary">
+						<div class="panel-body">
+							<div class="tab-content">
+								<div role="tabpanel" class="tab-pane" id="dashboard">
+								</div>
+								<div role="tabpanel" class="tab-pane" id="medication">
+									<h3>Medication</h3>
+									<div class="row">
+										<div class="col-xs-12">
+											<form method="post">
+
+												<div class="row">
+													<div class="col-lg-6">
+														<div class="form-group">
+															<label for="disease"><h4> <span class="label label-default">SELECT THE DISEASE YOU ARE SUFFERING FROM</span></h4></label>
+														      <select  class="selectpicker form-control" data-live-search="true" multiple data-max-options="3" id="disease">
+														        <option value="fever">FEVER</option>
+														        <option value="cold">COLD</option>
+														        <option value="body_pains">BODY PAINS</option>
+														        <option value="stomach_ache">STOMACH ACHE</option>
+														        <option value="headache">HEADACHE</option>
+														      </select>
+														</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-lg-6">
+														<div class="form-group">
+															<label for="symptoms1"><h4> <span class="label label-default">SELECT THE SYMPTOMS</span></h4></label>
+														      <select  class="selectpicker form-control" data-live-search="true" multiple data-max-options="10" id="symptoms1">
+														        <option value="fws">FEVER WITH SHIVER</option>
+														        <option value="fwc">FEVER WITH COLD</option>
+														        <option value="fbp">FEVER BODY PAINS</option>
+														        <option value="fwv">FEVER WITH VOMIT</option>
+														      </select>
+														</div>
+													</div>
+												</div>
+												<!--<div class="row">
+													<div class="col-lg-6">
+														<div class="form-group">
+															<label for="occurence"><h4> <span class="label label-default">SELECT THE OCCURENCE</span></h4></label>
+														      <select  class="selectpicker form-control" data-live-search="true" multpile data-max-options="1" id="occurence">
+														        <option value="ed">ENTIRE DAY</option>
+														        <option value="ddt">DURING DAY TIME</option>
+														        <option value="dnt">DURING NIGHT TIME</option>
+														      </select>
+														</div>
+													</div>
+												</div>-->
+
+											</form>
+										</div>
+									</div>
+								</div>
+								<div role="tabpanel" class="tab-pane" id="exercise">
+									Coming Soon....!
+								</div>
+								<div role="tabpanel" class="tab-pane" id="diet">
+									Coming Soon....!
+								</div>								
+							</div>
+						</div>
+					</div>
+				</div><!-- Content Body -->
+			</div>
+		</div>
+	</body>
+</html>
